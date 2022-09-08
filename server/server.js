@@ -4,8 +4,9 @@ const http = require('http');
 const io = require('socket.io');
 const cors = require('cors');
 
-const FETCH_INTERVAL = 5000;
 const PORT = process.env.PORT || 4000;
+
+const FETCH_INTERVAL = 5000;
 
 const tickers = [
   'AAPL', // Apple
@@ -75,6 +76,7 @@ socketServer.on('connection', (socket) => {
     trackTickers(socket);
   });
 });
+
 
 server.listen(PORT, () => {
   console.log(`Streaming service is running on http://localhost:${PORT}`);

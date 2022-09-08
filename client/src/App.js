@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import { Box, Typography } from '@material-ui/core';
+
+import { Settings } from './components/Settings';
+import { TickersList } from './components/TickersList';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        px: 18,
+      }}
+    >
+      <header>
+        <Typography variant="h2" style={{ color: '#80CBC4', margin: '5' }}>finance test task</Typography>
       </header>
-    </div>
+      <Settings />
+      <TickersList />
+    </Box>
   );
 }
 
